@@ -6,76 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/lesson.css" />
 
+    <!-- googlfont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- googlfont -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.bgswitcher.js"></script>
+
     <title>宇宙人と待ち合わせ</title>
   </head>
   <body>
     <section id="top">
-      <header>
-        <!-- ロゴ -->
-        <div class="logo">
-          <a href="index.html"><img class="logo-img" src="images/logo_y.png" alt="トップページへ" /></a>
-        </div>
-        <!-- PCナビ -->
-        <navi class="navi-pc">
-          <a href="#alien">宇宙人一覧</a>
-          <a href="#enjoy">宇宙人と行く日本</a>
-          <a class="navi-button" href="#">お問い合わせ</a>
-        </navi>
-
-        <!-- SPナビ ボタン-->
-        <div class="navi-sp-main">
-          <img
-            class="menu-sp"
-            src="./images/bars_24.svg"
-            alt="ナビゲーションを開く"
-            onclick="document.getElementById('nav-sp').style.display = 'block'"
-          />
-
-          <navi id="nav-sp">
-            <img
-              class="close"
-              src="./images/908_x_f.svg"
-              alt="ナビゲーションを閉じる"
-              onclick="document.getElementById('nav-sp').style.display = 'none'"
-            />
-
-            <div class="menu-main">
-              <a
-                class="menu"
-                href="#alien"
-                onclick="document.getElementById('nav-sp').style.display = 'none'"
-                >宇宙人一覧
-              </a>
-
-              <a
-                class="menu"
-                href="#enjoy"
-                onclick="document.getElementById('nav-sp').style.display = 'none'"
-                >宇宙人と行く日本
-              </a>
-
-              <a
-                class="menu"
-                href="#.html"
-                onclick="document.getElementById('nav-sp').style.display = 'none'"
-                >お問い合わせ
-              </a>
+      <div class="ba-image">
+        <div class="top-all">
+          <header>
+            <!-- ロゴ -->
+            <div class="logo">
+              <a href="index.html"
+                ><img class="logo-img" src="images/logo_y.png" alt="トップページへ"
+              /></a>
             </div>
-          </navi>
-        </div>
-      </header>
+            <!-- PCナビ -->
+            <navi class="navi-pc">
+              <ul>
+                <li class="navi-con"><a href="#alien">宇宙人一覧</a></li>
+                <li class="navi-con"><a href="#enjoy">宇宙人と行く日本</a></li>
+                <li class="navi-button"><a href="#inquiry">お問い合わせ</a></li>
+              </ul>
+            </navi>
 
-      <main>
-        <div class="top-main">
-          <h1>
-            高速で<br />
-            美しい宇宙人が<br />
-            来ています
-          </h1>
+            <!-- SPナビ ボタン-->
+            <div class="navi-sp-main">
+              <img
+                class="menu-sp"
+                src="./images/bars_24.svg"
+                alt="ナビゲーションを開く"
+                onclick="document.getElementById('nav-sp').style.display = 'block'"
+              />
 
-          <a class="mottomiru-btn" href="#"><img src="./images/24442.png" alt="UFO" />もっと見る</a>
+              <navi id="nav-sp">
+                <img
+                  class="close"
+                  src="./images/908_x_f.svg"
+                  alt="ナビゲーションを閉じる"
+                  onclick="document.getElementById('nav-sp').style.display = 'none'"
+                />
+
+                <div class="menu-main">
+                  <a
+                    class="menu"
+                    href="#alien"
+                    onclick="document.getElementById('nav-sp').style.display = 'none'"
+                    >宇宙人一覧
+                  </a>
+
+                  <a
+                    class="menu"
+                    href="#enjoy"
+                    onclick="document.getElementById('nav-sp').style.display = 'none'"
+                    >宇宙人と行く日本
+                  </a>
+
+                  <a
+                    class="menu"
+                    href="#inquiry"
+                    onclick="document.getElementById('nav-sp').style.display = 'none'"
+                    >お問い合わせ
+                  </a>
+                </div>
+              </navi>
+            </div>
+            <script>
+              jQuery(function ($) {
+                $(".ba-image").bgSwitcher({
+                  images: [
+                    "images/main_back.jpg",
+                    "images/main_back2.jpg",
+                    "images/main_back3.jpg",
+                    "images/main_back4.jpg",
+                    "images/main_back5.jpg",
+                  ], // 切替背景画像を指定
+                  interval: 3000, // 背景画像を切り替える間隔を指定 3000=3秒
+                  loop: true, // 切り替えを繰り返すか指定 true=繰り返す　false=繰り返さない
+                  shuffle: false, // 背景画像の順番をシャッフルするか指定 true=する　false=しない
+                  effect: "drop", // エフェクトの種類をfade,blind,clip,slide,drop,hideから指定
+                  duration: 500, // エフェクトの時間を指定します。
+                  easing: "swing", // エフェクトのイージングをlinear,swingから指定
+                });
+              });
+            </script>
+          </header>
+
+          <main>
+            <div class="top-main">
+              <h1>
+                高速で<br />
+                美しい宇宙人が<br />
+                来ています
+              </h1>
+              <button class="mottomiru-btn" type="button" onclick="location.href='#alien'">
+                <img src="./images/ufo256.png" alt="UFO" />もっと見る
+              </button>
+              <!-- <a class="mottomiru-btn" href="#"><img src="./images/24442.png" alt="UFO" />もっと見る</a> -->
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
     </section>
 
     <!-- alienページ -->
@@ -102,14 +142,14 @@
 
         <div class="enjoy-item-main">
           <div class="enjoy-photo">
-            <a href="#"><img src="./images/alien00009.jpg" alt="浅草" /></a>
+            <img src="./images/alien00009.jpg" alt="浅草" />
           </div>
 
           <div class="enjoy-item">
             <h4>浅草寺</h4>
             <div class="item-c">
-              <span>賽銭箱の魅力</span>
-              <span>おみくじをする意味</span>
+              <span class="s-1">賽銭箱の魅力</span>
+              <span class="s-2">おみくじをする意味</span>
             </div>
             <p>お寺好き宇宙人。普段は人間になりすましてお寺で働いてます</p>
           </div>
@@ -117,14 +157,14 @@
 
         <div class="enjoy-item-main">
           <div class="enjoy-photo">
-            <a href="#"><img src="./images/alien00008.jpg" alt="浅草" /></a>
+            <img src="./images/alien00008.jpg" alt="浅草" />
           </div>
 
           <div class="enjoy-item">
             <h4>居酒屋</h4>
             <div class="item-c">
-              <span>焼き鳥</span>
-              <span>ハイボール濃いめ</span>
+              <span class="s-1">焼き鳥</span>
+              <span class="s-2">ハイボール濃いめ</span>
             </div>
             <p>毎回同じものを注文。だいたい３杯飲んだら地球っていいよなって言ってくる</p>
           </div>
@@ -132,14 +172,14 @@
 
         <div class="enjoy-item-main">
           <div class="enjoy-photo">
-            <a href="#"><img src="./images/alien00010.jpg" alt="浅草" /></a>
+            <img src="./images/alien00010.jpg" alt="浅草" />
           </div>
 
           <div class="enjoy-item">
             <h4>電車</h4>
             <div class="item-c">
-              <span>顔は下向き</span>
-              <span>吊り革の革はどこ</span>
+              <span class="s-1">顔は下向き</span>
+              <span class="s-2">吊り革の革はどこ</span>
             </div>
             <p>電車移動が好きな宇宙人。UFOは自動で呼べるらしい</p>
           </div>
@@ -155,14 +195,51 @@
       </div>
 
       <form>
-        <div class="form-item">
-          <label>お名前</label>
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>お名前</label>
+          </div>
           <div class="form-content">
             <input class="contact-textbox" type="text" name="name" placeholder="" />
           </div>
         </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>メールアドレス</label>
+          </div>
+          <div class="form-content">
+            <input class="contact-textbox" type="text" name="name" placeholder="" />
+          </div>
+        </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>宇宙人ですか？</label>
+          </div>
+          <div class="form-content">
+            <input class="radiobutton" type="radio" name="name" value="yes" />
+            <label>宇宙人です</label>
+            <input class="radiobutton" type="radio" name="name" value="no" checked />
+            <label>宇宙人っぽくない</label>
+            <input class="radiobutton" type="radio" name="name" value="free" />
+            <label>仕事柄</label>
+          </div>
+        </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>メッセージ</label>
+          </div>
+          <div class="form-content">
+            <textarea class="contact-texarea" name="message" placeholder=""></textarea>
+          </div>
+        </div>
+
+        <input class="contact-submit" type="submit" value="送信" action="#" />
       </form>
     </section>
+
     <footer></footer>
   </body>
 </html>
