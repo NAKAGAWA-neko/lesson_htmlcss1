@@ -1,3 +1,3 @@
 {
-  "liveSassCompile.settings.includeItems": ["src/css/*scss"]
+  "liveSassCompile.settings.includeItems": ["/src/**/*.scss"]
 }
