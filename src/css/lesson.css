@@ -17,6 +17,20 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  color: #ffe20c;
+  font-size: 35px;
+  font-weight: bolder;
+  margin: 30px 0 0 0;
+}
+
+h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
 /* PC、SP共通スタイル SPメインです */
 .ba-image {
   width: 100vw;
@@ -99,8 +113,14 @@ h1 {
   line-height: 1.1;
 }
 
+.motto-btn-mai {
+  display: block;
+}
+
 .mottomiru-btn {
+  margin-bottom: 20px;
   background-color: #ffe20c;
+  width: 150px;
   padding: 10px 18px;
   border: none;
   border-radius: 12px 0 12px 12px;
@@ -131,26 +151,73 @@ h1 {
   vertical-align: -2px;
 }
 
+.mottomiru-btn2 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  outline: none;
+}
+.mottomiru-btn2 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  overflow: hidden;
+  /* 重なりを3Dで表示 */
+  transform-style: preserve-3d;
+  /* アニメーションの設定 数字が少なくなるほど早く回転 */
+  transition: 0.5s;
+}
+.mottomiru-btn2 img {
+  width: auto;
+  height: 50px;
+  text-align: center;
+}
+
+.btn-sp-1 {
+  border-radius: 0 0 12px 12px;
+}
+
+.btn-sp-2 {
+  border-radius: 12px 12px 0 0;
+}
+
+.btn2-rotate {
+  /* 回転前 */
+  /*hoverをした後の形状*/
+  /* 回転後 */
+  /*hoverをした後の形状*/
+}
+.btn2-rotate span:nth-child(1) {
+  background: #ffe20c;
+  color: #000;
+  transform: rotateX(0deg); /*はじめは回転なし*/
+  transform-origin: 0 50% -25px; /* 回転する起点 */
+}
+.btn2-rotate:hover span:nth-child(1) {
+  transform: rotateX(-90deg);
+}
+.btn2-rotate span:nth-child(2) {
+  background: #ffe20c;
+  color: #000;
+  transform: rotateX(90deg); /*はじめはX軸に90度回転*/
+  transform-origin: 0 50% -25px; /* 回転する起点 */
+}
+.btn2-rotate:hover span:nth-child(2) {
+  transform: rotateX(0deg);
+}
+
 #alien {
   margin: 0;
 }
 
 .alien-main {
   margin-left: 20px;
-}
-
-h2 {
-  color: #ffe20c;
-  font-size: 35px;
-  font-weight: bolder;
-  margin: 30px 0 0 0;
-}
-
-h3 {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 0 20px 0;
 }
 
 .alien-photo-main {
@@ -193,10 +260,6 @@ h3 {
   align-items: center;
   margin-bottom: 20px;
   border-radius: 12px;
-  transition: background-color 0.5s;
-}
-.enjoy-item-main:hover {
-  background-color: rgb(49, 49, 49);
 }
 
 .enjoy-photo {
@@ -237,36 +300,103 @@ h3 {
 .item-c {
   margin: 0 -5px 18px 0;
 }
-.item-c span {
-  background-color: gray;
+
+.btn-s-1 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #ffe20c;
+  color: black;
+  border: 1px solid #ffe20c; /* ボーダーの色と太さ */
   text-align: center;
   margin-right: 5px;
   padding: 5px 15px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.5s ease 0.1s;
-}
-.item-c span:hover {
-  background-color: #ffe20c;
-}
-.item-c span:active {
-  opacity: 0.8;
-}
-
-.s-1,
-.s-2 {
-  display: inline-block;
   width: 150px;
-}
-
-.s-1 {
   border-radius: 12px 0 12px 12px;
   margin: 0 0 10px 0;
+  font-weight: bold;
+  /*アニメーションの指定*/
+  transition: ease 0.2s;
+}
+.btn-s-1 span {
+  position: relative;
+  z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  color: black;
+}
+.btn-s-1:hover span {
+  color: #ffe20c;
 }
 
-.s-2 {
+/*== 背景が流れる（斜め） */
+.bgskew::before {
+  content: "";
+  /*絶対配置で位置を指定*/
+  position: absolute;
+  top: 0;
+  left: -130%;
+  /*色や形状*/
+  background: #333;
+  width: 120%;
+  height: 100%;
+  transform: skewX(-25deg);
+}
+
+/*hoverした時のアニメーション*/
+.bgskew:hover::before {
+  animation: skewanime 0.5s forwards; /*アニメーションの名前と速度を定義*/
+}
+
+@keyframes skewanime {
+  100% {
+    left: -10%; /*画面の見えていない左から右へ移動する終了地点*/
+  }
+}
+.btn-s-2 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #ffe20c;
+  color: black;
+  border: 1px solid #ffe20c; /* ボーダーの色と太さ */
+  text-align: center;
+  margin-right: 5px;
+  padding: 5px 15px;
+  width: 150px;
   border-radius: 0 12px 12px 12px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  transition: ease 0.2s;
+}
+.btn-s-2 span {
+  position: relative;
+  z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  color: black;
+}
+.btn-s-2:hover span {
+  color: #ffe20c;
+}
+
+/*== 背景が流れる（中央から外） */
+.bgcenterout:before {
+  content: "";
+  /*絶対配置で位置を指定*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  /*色や形状*/
+  background: #333;
+  width: 100%;
+  height: 100%;
+  /*アニメーション*/
+  transition: transform 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 0);
+  transform-origin: center;
+}
+
+/*hoverした際の形状*/
+.bgcenterout:hover:before {
+  transform: scale(1, 1);
 }
 
 #inquiry {
@@ -420,12 +550,6 @@ form {
     margin: 20px 0 0 0;
     text-align: left;
     width: auto;
-  }
-  .item-c span {
-    margin-right: 5px;
-  }
-  .s-1 {
-    border-radius: 0 12px 12px 12px;
   }
   .form-item-main {
     display: flex;
