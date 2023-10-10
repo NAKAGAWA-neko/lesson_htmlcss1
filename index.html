@@ -6,17 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/lesson.css" />
 
-    <!-- googlfont -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap"
-      rel="stylesheet"
-    />
-    <!-- googlfont -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/jquery.bgswitcher.js"></script>
-
     <title>宇宙人と待ち合わせ</title>
   </head>
   <body>
@@ -209,7 +198,46 @@
             <label>お名前</label>
           </div>
           <div class="form-content">
-            <input class="contact-textbox" type="text" name="name" placeholder="" />
+            <input class="contact-textbox" type="text" name="name" placeholder="宇宙人太郎" />
+          </div>
+        </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>好きな数字</label>
+          </div>
+          <div class="form-content">
+            <input
+              class="contact-textbox"
+              type="text"
+              pattern="^[0-9]+$"
+              name="name"
+              placeholder="9"
+            />
+          </div>
+        </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>郵便番号</label>
+          </div>
+          <div class="form-content">
+            <input
+              class="contact-textbox"
+              type="text"
+              pattern="\d{3}-\d{4}"
+              name="name"
+              placeholder="000-0000"
+            />
+          </div>
+        </div>
+
+        <div class="form-item-main">
+          <div class="form-item-title">
+            <label>日本に来た日</label>
+          </div>
+          <div class="form-content">
+            <input class="contact-textbox" type="date" name="name" value="2000-01-01" />
           </div>
         </div>
 
@@ -218,7 +246,13 @@
             <label>メールアドレス</label>
           </div>
           <div class="form-content">
-            <input class="contact-textbox" type="text" name="name" placeholder="" />
+            <input
+              class="contact-textbox"
+              type="email"
+              pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$"
+              name="name"
+              placeholder="uchu@jin.com"
+            />
           </div>
         </div>
 
@@ -238,10 +272,16 @@
 
         <div class="form-item-main">
           <div class="form-item-title">
-            <label>メッセージ</label>
+            <label>メッセージ<br />（5文字以上）</label>
           </div>
           <div class="form-content">
-            <textarea class="contact-texarea" name="message" placeholder=""></textarea>
+            <input
+              class="contact-textbox"
+              type="text"
+              pattern=".{5,}"
+              name="message"
+              placeholder="ワレワレハ"
+            />
           </div>
         </div>
 

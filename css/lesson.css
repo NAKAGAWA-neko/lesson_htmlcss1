@@ -1,5 +1,36 @@
+@charset "UTF-8";
 /* PC、SP共通スタイル SPメインです */
-@use "list" as l;
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  margin: 0;
+  font-size: 14px;
+  background-color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Aoboshi One", "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  color: #ffe20c;
+  font-size: 35px;
+  font-weight: bolder;
+  margin: 30px 0 0 0;
+}
+
+h3 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
 
 .ba-image {
   width: 100vw;
@@ -14,6 +45,7 @@
 .top-all {
   z-index: 100;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -23,6 +55,7 @@ header {
   width: 160px;
   margin: 20px 0 0 20px;
 }
+
 .logo-img {
   width: 100%;
 }
@@ -37,7 +70,7 @@ header {
 }
 
 #nav-sp {
-  background-color: l.$yellow-color;
+  background-color: #ffe20c;
   position: absolute;
   top: 0;
   right: 0;
@@ -52,13 +85,13 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-
   width: 39px;
 }
 
 .menu-main {
   margin-top: 120px;
 }
+
 .menu {
   display: block;
   margin: 10px 20px 0 20px;
@@ -79,13 +112,14 @@ h1 {
   margin: 100px 0 50px 0;
   line-height: 1.1;
 }
+
 .motto-btn-mai {
   display: block;
 }
 
 .mottomiru-btn {
   margin-bottom: 20px;
-  background-color: l.$yellow-color;
+  background-color: #ffe20c;
   width: 150px;
   padding: 10px 18px;
   border: none;
@@ -94,69 +128,55 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s, color 0.7s ease 0.2s, position 2s;
-
-  &:hover {
-    background-color: #f9fe00;
-    color: #313131;
-    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
-    position: relative;
-    top: -3px;
-    left: -3px;
-    cursor: url(../images/al16.cur), auto;
-  }
-
-  &:active {
-    box-shadow: none;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
-  img {
-    width: auto;
-    height: 14px;
-    margin: 0 5px 0 0;
-    vertical-align: -2px;
-  }
+}
+.mottomiru-btn:hover {
+  background-color: #f9fe00;
+  color: #313131;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -3px;
+  left: -3px;
+  cursor: url(../images/al16.cur), auto;
+}
+.mottomiru-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.mottomiru-btn img {
+  width: auto;
+  height: 14px;
+  margin: 0 5px 0 0;
+  vertical-align: -2px;
 }
 
-// 回転ボタン
 .mottomiru-btn2 {
   position: relative;
   display: inline-block;
-
   width: 100%;
   max-width: 150px;
   height: 50px;
   line-height: 50px;
   text-align: center;
   outline: none;
-
-  span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    font-weight: 700;
-    overflow: hidden;
-    /* 重なりを3Dで表示 */
-    transform-style: preserve-3d;
-    /* アニメーションの設定 数字が少なくなるほど早く回転 */
-    transition: 0.5s;
-
-    // background-color: l.$yellow-color;
-    // padding: 10px 18px;
-    // border-radius: 12px 0 12px 12px;
-    // color: black;
-    // font-weight: bold;
-  }
-
-  img {
-    width: auto;
-    height: 50px;
-    text-align: center;
-  }
+}
+.mottomiru-btn2 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+  overflow: hidden;
+  /* 重なりを3Dで表示 */
+  transform-style: preserve-3d;
+  /* アニメーションの設定 数字が少なくなるほど早く回転 */
+  transition: 0.5s;
+}
+.mottomiru-btn2 img {
+  width: auto;
+  height: 50px;
+  text-align: center;
 }
 
 .btn-sp-1 {
@@ -169,49 +189,33 @@ h1 {
 
 .btn2-rotate {
   /* 回転前 */
-  span {
-    &:nth-child(1) {
-      background: l.$yellow-color;
-      color: #000;
-      transform: rotateX(0deg); /*はじめは回転なし*/
-      transform-origin: 0 50% -25px; /* 回転する起点 */
-    }
-  }
   /*hoverをした後の形状*/
-  &:hover {
-    span {
-      &:nth-child(1) {
-        transform: rotateX(-90deg); //X軸に-90度回転
-      }
-    }
-  }
-
   /* 回転後 */
-  span {
-    &:nth-child(2) {
-      background: l.$yellow-color;
-      color: #000;
-      transform: rotateX(90deg); /*はじめはX軸に90度回転*/
-      transform-origin: 0 50% -25px; /* 回転する起点 */
-    }
-  }
   /*hoverをした後の形状*/
-  &:hover {
-    span {
-      &:nth-child(2) {
-        transform: rotateX(0deg); // X軸に0度回転
-      }
-    }
-  }
 }
-
-// 回転ボタン↑
-
-// alienページ　SP-------------------------------
+.btn2-rotate span:nth-child(1) {
+  background: #ffe20c;
+  color: #000;
+  transform: rotateX(0deg); /*はじめは回転なし*/
+  transform-origin: 0 50% -25px; /* 回転する起点 */
+}
+.btn2-rotate:hover span:nth-child(1) {
+  transform: rotateX(-90deg);
+}
+.btn2-rotate span:nth-child(2) {
+  background: #ffe20c;
+  color: #000;
+  transform: rotateX(90deg); /*はじめはX軸に90度回転*/
+  transform-origin: 0 50% -25px; /* 回転する起点 */
+}
+.btn2-rotate:hover span:nth-child(2) {
+  transform: rotateX(0deg);
+}
 
 #alien {
   margin: 0;
 }
+
 .alien-main {
   margin-left: 20px;
 }
@@ -228,22 +232,17 @@ h1 {
   margin: 0 20px 20px 0;
   border-radius: 20px;
   flex-direction: column;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 1s;
-
-    &:hover {
-      transform: scale(1.35, 1.35);
-    }
-  }
 }
-
-// alien-photoギャラリー------------------------------------
-
-// enjoy SP---
+.alien-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 1s;
+}
+.alien-photo img:hover {
+  transform: scale(1.35, 1.35);
+}
 
 #enjoy {
   margin: 0;
@@ -254,18 +253,13 @@ h1 {
 }
 
 .enjoy-item-main {
-  border: solid 1px l.$yellow-color;
+  border: solid 1px #ffe20c;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   border-radius: 12px;
-  // transition: background-color 0.5s;
-
-  // &:hover {
-  //   background-color: rgb(49, 49, 49);
-  // }
 }
 
 .enjoy-photo {
@@ -276,49 +270,44 @@ h1 {
   border-radius: 20px;
   cursor: url(../images/al16-y.cur), auto;
   transition: opacity 0.3s;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &:hover {
-    opacity: 0.3;
-  }
+}
+.enjoy-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.enjoy-photo:hover {
+  opacity: 0.3;
 }
 
 .enjoy-item {
   margin: auto 20px;
   text-align: center;
-
-  h4 {
-    color: l.$yellow-color;
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-  }
-
-  p {
-    color: gray;
-    margin: -5px 0 20px 0;
-    text-align: left;
-  }
+}
+.enjoy-item h4 {
+  color: #ffe20c;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+.enjoy-item p {
+  color: gray;
+  margin: -5px 0 20px 0;
+  text-align: left;
 }
 
 .item-c {
   margin: 0 -5px 18px 0;
 }
 
-// ----btn-1-----------------------------------------
-
 .btn-s-1 {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  background-color: l.$yellow-color;
+  background-color: #ffe20c;
   color: black;
-  border: 1px solid l.$yellow-color; /* ボーダーの色と太さ */
+  border: 1px solid #ffe20c; /* ボーダーの色と太さ */
   text-align: center;
   margin-right: 5px;
   padding: 5px 15px;
@@ -326,21 +315,16 @@ h1 {
   border-radius: 12px 0 12px 12px;
   margin: 0 0 10px 0;
   font-weight: bold;
-
   /*アニメーションの指定*/
   transition: ease 0.2s;
-
-  span {
-    position: relative;
-    z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
-    color: black;
-  }
-
-  &:hover {
-    span {
-      color: l.$yellow-color;
-    }
-  }
+}
+.btn-s-1 span {
+  position: relative;
+  z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  color: black;
+}
+.btn-s-1:hover span {
+  color: #ffe20c;
 }
 
 /*== 背景が流れる（斜め） */
@@ -367,16 +351,13 @@ h1 {
     left: -10%; /*画面の見えていない左から右へ移動する終了地点*/
   }
 }
-
-// ----btn-2-------------------------------------------
-
 .btn-s-2 {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  background-color: l.$yellow-color;
+  background-color: #ffe20c;
   color: black;
-  border: 1px solid l.$yellow-color; /* ボーダーの色と太さ */
+  border: 1px solid #ffe20c; /* ボーダーの色と太さ */
   text-align: center;
   margin-right: 5px;
   padding: 5px 15px;
@@ -385,20 +366,17 @@ h1 {
   margin: 0 0 10px 0;
   font-weight: bold;
   transition: ease 0.2s;
-
-  span {
-    position: relative;
-    z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
-    color: black;
-  }
-  &:hover {
-    span {
-      color: l.$yellow-color;
-    }
-  }
 }
-/*== 背景が流れる（中央から外） */
+.btn-s-2 span {
+  position: relative;
+  z-index: 3; /*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  color: black;
+}
+.btn-s-2:hover span {
+  color: #ffe20c;
+}
 
+/*== 背景が流れる（中央から外） */
 .bgcenterout:before {
   content: "";
   /*絶対配置で位置を指定*/
@@ -421,19 +399,13 @@ h1 {
   transform: scale(1, 1);
 }
 
-// ----btn-2------------------------------------
-
-// お問い合わせPC
-
 #inquiry {
   margin: 0 20px;
 }
 
-.inquiry-main {
-  p {
-    color: white;
-    margin: 0;
-  }
+.inquiry-main p {
+  color: white;
+  margin: 0;
 }
 
 form {
@@ -444,10 +416,8 @@ form {
   margin-bottom: 30px;
 }
 
-.form-item-title {
-  label {
-    color: white;
-  }
+.form-item-title label {
+  color: white;
 }
 
 .form-content {
@@ -471,7 +441,7 @@ form {
 
 .contact-submit {
   padding: 5px 15px;
-  background-color: l.$yellow-color;
+  background-color: #ffe20c;
   margin: 0 0 20px 2px;
   border: none;
   font-weight: 600;
@@ -479,81 +449,59 @@ form {
   position: relative;
   top: -2px;
   left: -2px;
-
-  &:hover {
-    background-color: #f9f3c7;
-    cursor: pointer;
-  }
-
-  &:active {
-    box-shadow: none;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
 }
-
-// SPで必要ない--------------------------------------------------------------------
+.contact-submit:hover {
+  background-color: #f9f3c7;
+  cursor: pointer;
+}
+.contact-submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 0;
+  left: 0;
+}
 
 .navi-pc,
 .navi-button {
   display: none;
 }
 
-// --------------------------------------------------------------------
-// PC用に必要なコード
-// PC-768px以上
-
 @media screen and (min-width: 768px) {
-  // PCで必要ない
   #nav-sp,
   .menu-sp,
   .menu-main,
   .navi-sp-main {
     display: none;
   }
-
   #top {
     background-attachment: fixed;
   }
-
   header {
     align-items: flex-start;
   }
-
   .navi-pc {
     display: block;
     margin: 5px 20px 0 10px;
-
-    ul {
-      display: flex;
-      align-items: center;
-    }
-
-    li {
-      list-style: none;
-    }
   }
-
+  .navi-pc ul {
+    display: flex;
+    align-items: center;
+  }
+  .navi-pc li {
+    list-style: none;
+  }
   .navi-con {
     margin-left: 20px;
     font-weight: 600;
     font-size: 14px;
     color: white;
-
-    a {
-      &:link,
-      &:visited,
-      &:active {
-        color: white;
-      }
-
-      &:hover {
-        color: l.$yellow-color;
-      }
-    }
   }
-
+  .navi-con a:link, .navi-con a:visited, .navi-con a:active {
+    color: white;
+  }
+  .navi-con a:hover {
+    color: #ffe20c;
+  }
   .navi-button {
     display: block;
     background-color: grey;
@@ -564,75 +512,60 @@ form {
     border-radius: 7px;
     transition: background-color 0.7s, color 0.7s ease 0.2s;
     color: white;
-
-    a {
-      color: white;
-      text-decoration: none;
-
-      &:hover {
-        color: black;
-      }
-    }
-
-    &:hover {
-      background-color: l.$yellow-color;
-      color: black;
-    }
   }
-
+  .navi-button a {
+    color: white;
+    text-decoration: none;
+  }
+  .navi-button a:hover {
+    color: black;
+  }
+  .navi-button:hover {
+    background-color: #ffe20c;
+    color: black;
+  }
   .top-main {
     margin-left: 100px;
     padding-bottom: 300px;
   }
-
   h1 {
     font-size: 70px;
     margin: 100px 0 30px 0;
   }
-
-  // alienページ　PC
-
   .alien-photo {
     width: auto;
     height: 300px;
     flex-basis: calc(33.33% - 20px);
   }
-
-  // enjoy PC
   .enjoy-item-main {
     width: auto;
     flex-direction: row;
     justify-content: flex-start;
   }
-
   .enjoy-photo {
     flex-direction: row;
     margin: 25px;
   }
-
   .enjoy-item {
     margin: 20px 0 0 0;
     text-align: left;
     width: auto;
   }
-
-  // お問い合わせPC
-
   .form-item-main {
     display: flex;
     flex-wrap: wrap;
   }
-
   .form-item-title {
     width: 130px;
     align-self: center;
   }
-
   .contact-textbox {
     width: 350px;
   }
-
   .contact-texarea {
     width: 350px;
   }
 }
+.contact-texarea {
+  width: 350px;
+}/*# sourceMappingURL=lesson.css.map */

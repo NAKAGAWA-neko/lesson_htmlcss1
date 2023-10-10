@@ -1,3 +1,5 @@
 {
-  "liveSassCompile.settings.includeItems": ["/src/**/*.scss"]
+  "liveSassCompile.settings.includeItems": ["/src/**/*.scss"],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
