@@ -352,9 +352,8 @@
      * Listen to the resize event
      */
     _listenToResize: function () {
-      var that = this;
-      this._resizeHandler = function () {
-        that._adjustRectangle();
+      this._resizeHandler = () => {
+        this._adjustRectangle();
       };
       $(window).on("resize", this._resizeHandler);
     },

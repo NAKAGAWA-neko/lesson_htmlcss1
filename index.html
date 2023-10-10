@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/lesson.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <title>宇宙人と待ち合わせ</title>
   </head>
@@ -20,13 +21,13 @@
               /></a>
             </div>
             <!-- PCナビ -->
-            <navi class="navi-pc">
+            <nav class="navi-pc">
               <ul>
                 <li class="navi-con"><a href="#alien">宇宙人一覧</a></li>
                 <li class="navi-con"><a href="#enjoy">宇宙人と行く日本</a></li>
                 <li class="navi-button"><a href="#inquiry">お問い合わせ</a></li>
               </ul>
-            </navi>
+            </nav>
 
             <!-- SPナビ ボタン-->
             <div class="navi-sp-main">
@@ -37,7 +38,7 @@
                 onclick="document.getElementById('nav-sp').style.display = 'block'"
               />
 
-              <navi id="nav-sp">
+              <nav id="nav-sp">
                 <img
                   class="close"
                   src="./images/908_x_f.svg"
@@ -67,7 +68,7 @@
                     >お問い合わせ
                   </a>
                 </div>
-              </navi>
+              </nav>
             </div>
             <script>
               jQuery(function ($) {
@@ -211,7 +212,7 @@
               class="contact-textbox"
               type="text"
               pattern="^[0-9]+$"
-              name="name"
+              name="favorite_number"
               placeholder="9"
             />
           </div>
@@ -226,7 +227,7 @@
               class="contact-textbox"
               type="text"
               pattern="\d{3}-\d{4}"
-              name="name"
+              name="post"
               placeholder="000-0000"
             />
           </div>
@@ -237,7 +238,7 @@
             <label>日本に来た日</label>
           </div>
           <div class="form-content">
-            <input class="contact-textbox" type="date" name="name" value="2000-01-01" />
+            <input class="contact-textbox" type="date" name="japan" value="2000-01-01" />
           </div>
         </div>
 
@@ -250,7 +251,7 @@
               class="contact-textbox"
               type="email"
               pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$"
-              name="name"
+              name="email"
               placeholder="uchu@jin.com"
             />
           </div>
@@ -261,11 +262,11 @@
             <label>宇宙人ですか？</label>
           </div>
           <div class="form-content">
-            <input class="radiobutton" type="radio" name="name" value="yes" />
+            <input class="radiobutton" type="radio" name="alien-1" value="yes" />
             <label>宇宙人です</label>
-            <input class="radiobutton" type="radio" name="name" value="no" checked />
+            <input class="radiobutton" type="radio" name="alien-2" value="no" checked />
             <label>宇宙人っぽくない</label>
-            <input class="radiobutton" type="radio" name="name" value="free" />
+            <input class="radiobutton" type="radio" name="alien-3" value="free" />
             <label>仕事柄</label>
           </div>
         </div>
@@ -290,5 +291,7 @@
     </section>
 
     <footer></footer>
+
+    <script src="js/jquery.bgswitcher.js"></script>
   </body>
 </html>
